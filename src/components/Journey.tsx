@@ -50,7 +50,7 @@ const Journey = () => {
   return (
     <div
       id="section2"
-      className="flex relative justify-center md:items-center h-[100svh] max-h-[1080px] w-full pt-20 p-10 bg-gradient-to-tr from-indigo-600 to-red-500 shadow-[rgba(0,0,0,1)] shadow-2xl"
+      className="flex relative justify-center md:items-center h-[100svh] max-h-[1080px] w-full pt-20 p-10 bg-gradient-to-tr from-green-600  shadow-[rgba(0,0,0,1)] shadow-2xl"
     >
       <Swiper
         spaceBetween={30}
@@ -78,9 +78,9 @@ const Journey = () => {
         {PROJECTS_DATA.map((project) => (
           <SwiperSlide
             key={project.id}
-            className="card-main  my-auto max-w-fit lg:mx-auto relative mx-2 group "
+            className="card-main p-2 my-auto max-w-fit lg:mx-auto relative mx-2 group "
           >
-            <h2 className="card-name-tag z-10 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[rgba(0,0,0,0.2)] transition-all  absolute backdrop-blur top-1 lg:-top-8 lg:-left-10 text-[#252525] lg:text-2xl border-4 border-l-indigo-500 border-b-indigo-700 border-t-orange-400 border-r-orange-600 shadow-md shadow-[rgba(0,0,0,0.5)] font-bold  p-2 rounded-xl">
+            <h2 className="card-name-tag z-20  group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[rgba(0,0,0,0.2)] transition-all  absolute backdrop-blur  lg:-top-8 lg:-left-10 text-[#252525] lg:text-2xl border-4 border-l-indigo-500 border-b-indigo-700 border-t-orange-400 border-r-orange-600 shadow-md shadow-[rgba(0,0,0,0.5)] font-bold  p-2 rounded-xl">
               {project.name}
             </h2>
             <a href={project.link !== 'dev'?project.link:''}>
@@ -96,7 +96,7 @@ const Journey = () => {
               >
                 <LazyLoadImage
                   className="rounded-2xl overflow-hidden"
-                  width={330}
+                  width={300}
                   src={project.pictureLink}
                 />
               </div>
@@ -121,10 +121,11 @@ const Journey = () => {
                   setCardRotate(project.id);
                 }
               }}
-              className="absolute bottom-0  right-0  lg:-bottom-3 px-2  lg:-right-4 text-[#252525] rounded-lg backdrop-blur-xl border-2 border-l-indigo-500 border-b-indigo-700 border-t-orange-400 border-r-orange-600 shadow-md shadow-[rgba(0,0,0,0.5)]"
+             
+              className="absolute bottom-2 max-md:bg-gradient-to-bl from-green-500 right-2  lg:-bottom-3 px-2  lg:-right-4 text-[#252525] rounded-lg backdrop-blur-xl border-2 border-l-indigo-500 border-b-indigo-700 border-t-orange-400 border-r-orange-600 shadow-md shadow-[rgba(0,0,0,0.5)]"
             >
               <FiArrowRight color="" className=" w-7 h-7" />
-              <span className="font-bold absolute left-0 transition-all opacity-0 top-7 group-hover:opacity-100 group-hover:top-8 text-sm">
+              <span className="font-bold max-md:hidden absolute left-0 transition-all opacity-0 top-7 group-hover:opacity-100 group-hover:top-8 text-sm">
                 Description
               </span>
             </button>

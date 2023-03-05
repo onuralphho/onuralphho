@@ -58,15 +58,12 @@ body{
   left: 50%; 
   transform: translate(-50%, -50%);
   max-height: 200px;
-  height: 0;
   position: absolute;
   cursor: unset;
   user-select: none;
   border-radius: 10px;
   opacity: 0;
-
   transition: all 0.5s  ;
-
 }
 
 .astroid-wrapper:hover > img{
@@ -92,6 +89,26 @@ body{
 .astroid-wrapper:hover > img:nth-child(6){
   transform: translate(50px,-140px) rotate(360deg);
 }
+
+@media screen and (max-width:480px) {
+  .astroid-wrapper:hover > img:nth-child(4){
+    transform: translate(-30px,-150px)  rotate(360deg);
+  }
+  .astroid-wrapper:hover > img:nth-child(6){
+    transform: translate(50px,-100px) rotate(360deg);
+  }
+  .astroid-wrapper:hover > img:nth-child(5){
+    transform: translate(-120px,-110px) rotate(360deg);
+  }
+  
+.astroid-wrapper:hover > img{
+  opacity: 1;
+  max-height: 200px;
+  height: unset;
+
+}
+}
+
 
 /* 
 .astroid:nth-child(1){
@@ -327,7 +344,7 @@ body{
   padding-left: 0px;
   white-space: nowrap;
  transform: translateY(-25%);
- animation: text-slide 10s infinite alternate linear ;
+ animation: text-slide 5s infinite alternate linear ;
 }
 
 @keyframes text-slide {
@@ -371,6 +388,17 @@ body{
 .card-name-tag:hover{
   transform: perspective(300px) rotateY(0deg)
 }
+
+@media screen and (max-width:480px) {
+  .card-name-tag{
+  transform: none
+}
+.card-name-tag:hover{
+  transform: none
+}
+}
+
+
 @keyframes typing {
   from { width: 0 ;border-right: .15em solid orange;}
   to { width: 100%; border-right: none;  }

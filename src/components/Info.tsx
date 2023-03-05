@@ -21,16 +21,16 @@ const Info = () => {
       className="flex flex-col relative  gap-10 md:justify-center   h-[100svh] max-h-[1080px]  w-full pt-20 p-10 bg-gradient-to-tr   from-[#161616] to- shadow-[rgba(0,0,0,1)] shadow-2xl"
     >
       <div className="flex gap-2 justify-start md:pl-60 flex-wrap">
-        <span className="text-7xl font-bold text-white ">Hi, I'm a</span>
+        <span className="text-7xl font-bold text-white ">Hi, I'm </span>
         <span className="flex flex-col gap-7 md:gap-10 font-bold h-20 md:h-28 overflow-hidden">
-          {selfInfo.map((i) => (
-            <span style={{color:i.color}} className={` text-6xl md:text-8xl test ` }> {i.text}</span>
+          {selfInfo.map((i,index) => (
+            <span key={index} style={{color:i.color}} className={` text-6xl md:text-8xl test ` }> {i.text}</span>
           ))}
         </span>
       </div>
 
       <div
-        className="flex w-full gap-10 lg:gap-60 max-md:flex-col max-md:items-center md:justify-evenly md:px-40"
+        className="flex w-full gap-3 lg:gap-60 max-md:flex-col  max-md:items-center md:justify-evenly md:px-40"
         style={{ zIndex: "2" }}
       >
         <div className="flex flex-col items-center gap-10">
@@ -58,18 +58,18 @@ const Info = () => {
           </code>
         </div>
         <div className="flex flex-col">
-          <div className="astroid-wrapper text-red-500 text-center relative border border-red-500 h-fit w-fit p-5 rounded-full shadow-xl  ">
+          <div className="astroid-wrapper text-red-500 text-center relative border border-red-500 h-fit w-fit px-2  md:p-5 rounded-full shadow-xl  ">
             <span>Core Skills</span>
             <img
               draggable="false"
-              className="astroid "
+              className="astroid max-md:w-14"
               src={reactLogo}
               alt=""
             />
-            <img draggable="false" className="astroid " src={nextLogo} alt="" />
-            <img draggable="false" className="astroid " src={jsLogo} alt="" />
-            <img draggable="false" className="astroid " src={csslogo} alt="" />
-            <img draggable="false" className="astroid " src={htmllogo} alt="" />
+            <img draggable="false" className="astroid max-md:w-14" src={nextLogo} alt="" />
+            <img draggable="false" className="astroid max-md:w-14" src={jsLogo} alt="" />
+            <img draggable="false" className="astroid max-md:w-14" src={csslogo} alt="" />
+            <img draggable="false" className="astroid max-md:w-14" src={htmllogo} alt="" />
           </div>
           <div className="w-full h-full">
             <code>{/* {"<h2 id=''></h2>"} */}</code>

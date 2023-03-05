@@ -19,6 +19,9 @@ function App() {
       <div className="main-item h-screen">
         <Contact/>
       </div>
+      <div>
+        
+      </div>
     </div>
   );
 }
