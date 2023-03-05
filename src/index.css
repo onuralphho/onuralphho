@@ -1,0 +1,388 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-moz-selection { 
+  @apply text-[#ffffff] bg-purple-600
+
+}
+
+::selection {
+  @apply text-[#ffffff] bg-purple-600 
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+
+::-webkit-scrollbar-track {
+  background:#252525;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background:#9e9e9e;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-purple-600
+}
+
+body{
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.main-container{
+  scroll-snap-type: y mandatory;
+  scroll-behavior:smooth;
+}
+
+.main-item{
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+
+.social-icon{
+  @apply w-8 h-8 hover:scale-110 transition-all 
+}
+
+.astroid-wrapper{
+  cursor: pointer;
+}
+
+.astroid{
+  
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  max-height: 200px;
+  height: 0;
+  position: absolute;
+  cursor: unset;
+  user-select: none;
+  border-radius: 10px;
+  opacity: 0;
+
+  transition: all 0.5s  ;
+
+}
+
+.astroid-wrapper:hover > img{
+  opacity: 1;
+  max-height: 200px;
+  height: 5rem;
+
+}
+
+.astroid-wrapper:hover > img:nth-child(2){
+  transform: translate(100px,-20px) rotate(360deg);
+}
+
+.astroid-wrapper:hover > img:nth-child(3){
+  transform: translate(-170px,-20px) rotate(360deg);;
+}
+.astroid-wrapper:hover > img:nth-child(4){
+  transform: translate(-35px,50px)  rotate(360deg);
+}
+.astroid-wrapper:hover > img:nth-child(5){
+  transform: translate(-120px,-140px) rotate(360deg);
+}
+.astroid-wrapper:hover > img:nth-child(6){
+  transform: translate(50px,-140px) rotate(360deg);
+}
+
+/* 
+.astroid:nth-child(1){
+  
+  right: -150px;
+  animation: astroid_1 infinite 7s ease-out ;
+}
+.astroid:nth-child(2){
+  top: -150px;
+  right: 0px;
+  animation: astroid_1 infinite 7s ease-out ;
+  animation-delay: 5s;
+}
+.astroid:nth-child(3){
+  top: -150px;
+  right:200px;
+  animation: astroid_1 infinite 7s  ease-out ;
+  animation-delay: 2s;
+}
+
+@media screen and (max-width:768px) {
+  .astroid:nth-child(3){
+    right: -300px;
+  }
+}
+
+@keyframes astroid_1 {
+  0%
+  {transform: translate(0px,0px) scale(0.1);
+    
+  }
+  100%{
+    transform: translate(-700px,700px) scale(1.5);
+    
+    opacity: 0;
+  }
+
+} */
+
+.area{
+  background: #37246b;  
+  background: -webkit-linear-gradient(to left, #656be9, #4e54c8);  
+  width: 100%;
+  height:200vh;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 0;
+ 
+}
+
+.circles{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circles li{
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+  
+}
+
+.circles li:nth-child(1){
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+  0%{
+      transform: translateY(-500px) rotate(0deg);
+      opacity: 1;
+      border-radius: 0;
+  }
+
+  100%{
+      transform: translateY(-2000px) rotate(720deg);
+      opacity: 0;
+      border-radius: 50%;
+  }
+
+}
+
+
+
+.typewriter h1 {
+  overflow: hidden; 
+  border-right: none; 
+  white-space: nowrap; 
+  margin: 0 auto; 
+  letter-spacing: .1em; 
+  width: 0;
+  margin: 0;
+}
+
+.typewriter h1:nth-child(1){
+  animation: 
+  typing 3.5s steps(40, end) ,
+  blink-caret .6s step-end infinite ;
+  animation-fill-mode: forwards;  
+  
+}
+
+.typewriter h1:nth-child(2){
+  animation: 
+  typing 3.5s steps(40, end),
+  blink-caret .6s step-end infinite;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;  
+  
+  
+}
+.typewriter h1:nth-child(3){
+ 
+  animation: 
+  typing2 3.5s steps(40, end),
+  blink-caret .6s step-end infinite;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;  
+  max-width: fit-content;
+}
+
+
+
+
+.card-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: all 0.6s;
+  transform-style: preserve-3d;
+}
+.card-inner-rotate {
+  transform: rotateY(180deg);
+
+}
+.card-back{
+  
+  transform: rotateY(180deg);
+}
+
+.card-front{
+  backface-visibility: hidden;
+}
+
+.test{
+  
+  padding: 20px;
+  padding-left: 0px;
+  white-space: nowrap;
+ transform: translateY(-25%);
+ animation: text-slide 10s infinite alternate linear ;
+}
+
+@keyframes text-slide {
+
+  20%{
+    transform: translateY(-25%);
+  }
+  48%{
+    transform: translateY(-150%);
+  }
+  50%{
+    transform: translateY(-152%);
+  }
+  52%{
+    transform: translateY(-150%);
+  }
+  70%{
+    transform: translateY(-150%);
+  }
+  90%{
+    transform: translateY(-280%);
+  }
+  92%{
+    transform: translateY(-282%);
+  }
+  94%{
+    transform: translateY(-280%);
+  }
+  100%{
+    transform: translateY(-280%);
+  }
+  
+}
+
+
+
+.card-name-tag{
+  
+  transform: perspective(200px) rotateY(20deg)
+}
+.card-name-tag:hover{
+  transform: perspective(300px) rotateY(0deg)
+}
+@keyframes typing {
+  from { width: 0 ;border-right: .15em solid orange;}
+  to { width: 100%; border-right: none;  }
+}
+
+@keyframes typing2 {
+  from { width: 0 ;border-right: .15em solid orange;}
+  to { width: 100%;border-right: .15em solid orange; }
+}
+
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
