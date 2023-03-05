@@ -58,6 +58,7 @@ body{
   left: 50%; 
   transform: translate(-50%, -50%);
   max-height: 200px;
+  height: 0;
   position: absolute;
   cursor: unset;
   user-select: none;
@@ -100,12 +101,15 @@ body{
   .astroid-wrapper:hover > img:nth-child(5){
     transform: translate(-120px,-110px) rotate(360deg);
   }
-  
+ 
+  .astroid{
+    height: auto;
+  }
+
 .astroid-wrapper:hover > img{
   opacity: 1;
   max-height: 200px;
-  height: unset;
-
+  height: auto;
 }
 }
 
@@ -297,7 +301,7 @@ body{
 
 .typewriter h1:nth-child(2){
   animation: 
-  typing 3.5s steps(40, end),
+  typing 2.5s steps(40, end),
   blink-caret .6s step-end infinite;
   animation-delay: 2s;
   animation-fill-mode: forwards;  
@@ -338,7 +342,7 @@ body{
   backface-visibility: hidden;
 }
 
-.test{
+.toast{
   
   padding: 20px;
   padding-left: 0px;

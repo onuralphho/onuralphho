@@ -8,6 +8,7 @@ import csslogo from "../assets/CSS3_logo_and_wordmark.svg.png";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useState } from "react";
 
+
 const Info = () => {
   const [selfInfo, setSelfInfo] = useState([
     { text: "Developer", color: "#9333ea" },
@@ -24,7 +25,7 @@ const Info = () => {
         <span className="text-7xl font-bold text-white ">Hi, I'm </span>
         <span className="flex flex-col gap-7 md:gap-10 font-bold h-20 md:h-28 overflow-hidden">
           {selfInfo.map((i,index) => (
-            <span key={index} style={{color:i.color}} className={` text-6xl md:text-8xl test ` }> {i.text}</span>
+            <span key={index} style={{color:i.color}} className={` text-6xl md:text-8xl toast ` }> {i.text}</span>
           ))}
         </span>
       </div>
@@ -41,24 +42,13 @@ const Info = () => {
             height={600}
             className=" h-auto max-w-[150px] md:max-w-md rounded-full shadow-lg shadow-[rgba(0,0,0,0.5)]"
             placeholder={
-              <div className="h-40 w-40 shadow-lg shadow-black "></div>
+              <div className="h-40 w-40 shadow-lg shadow-black "><img src="" alt="" /></div>
             }
           />
-          <code className="text-white flex flex-col text-start md:text-lg typewriter">
-            <h1 className="max-w-fit ">
-              <span className="text-blue-600">{"<h1 id='name'>"}</span> <br />
-            </h1>
-            <h1 className="max-w-fit  pl-5">
-              <span>Onuralp Hacıhamzaoğlu</span>
-              <br />
-            </h1>
-            <h1 className="max-w-fit">
-              <span className="text-blue-600">{" </h1>"}</span>
-            </h1>
-          </code>
+         
         </div>
-        <div className="flex flex-col">
-          <div className="astroid-wrapper text-red-500 text-center relative border border-red-500 h-fit w-fit px-2  md:p-5 rounded-full shadow-xl  ">
+        <div className="flex flex-col max-md:flex-col-reverse items-center gap-20 max-md:gap-6">
+          <div className=" astroid-wrapper text-red-500 text-center relative border border-red-500 h-fit w-fit px-2  md:p-5 rounded-full shadow-xl  ">
             <span>Core Skills</span>
             <img
               draggable="false"
@@ -71,6 +61,19 @@ const Info = () => {
             <img draggable="false" className="astroid max-md:w-14" src={csslogo} alt="" />
             <img draggable="false" className="astroid max-md:w-14" src={htmllogo} alt="" />
           </div>
+          <div className="max-md:w-[300px] w-[400px]">
+          <code className="text-white flex flex-col text-start md:text-2xl typewriter">
+            <h1 className="max-w-fit ">
+              <span className="text-blue-600">{"<h1 id='name'>"}</span> <br />
+            </h1>
+            <h1 className="max-w-fit pl-5">
+              <span>Onuralp Hacıhamzaoğlu</span>
+              <br />
+            </h1>
+            <h1 className="max-w-fit">
+              <span className="text-blue-600">{" </h1>"}</span>
+            </h1>
+          </code></div>
           <div className="w-full h-full">
             <code>{/* {"<h2 id=''></h2>"} */}</code>
           </div>

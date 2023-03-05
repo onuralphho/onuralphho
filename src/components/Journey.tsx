@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "swiper/css";
 import { useState } from "react";
+import profilesmall from '../assets/profile-small.jpg'
 
 const PROJECTS_DATA = [
   {
@@ -55,7 +56,7 @@ const Journey = () => {
       <Swiper
         spaceBetween={30}
         slidesPerView={3}
-        className="mySwiper h-min lg:p-10"
+        className="mySwiper h-min p-3 lg:p-10"
         breakpoints={{
           0: {
             slidesPerView: 1,
@@ -78,7 +79,7 @@ const Journey = () => {
         {PROJECTS_DATA.map((project) => (
           <SwiperSlide
             key={project.id}
-            className="card-main p-2 my-auto max-w-fit lg:mx-auto relative mx-2 group "
+            className="card-main select-none my-auto max-w-fit lg:mx-auto relative mx-2 group "
           >
             <h2 className="card-name-tag z-20  group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[rgba(0,0,0,0.2)] transition-all  absolute backdrop-blur  lg:-top-8 lg:-left-10 text-[#252525] lg:text-2xl border-4 border-l-indigo-500 border-b-indigo-700 border-t-orange-400 border-r-orange-600 shadow-md shadow-[rgba(0,0,0,0.5)] font-bold  p-2 rounded-xl">
               {project.name}
@@ -98,6 +99,7 @@ const Journey = () => {
                   className="rounded-2xl overflow-hidden"
                   width={300}
                   src={project.pictureLink}
+                 
                 />
               </div>
 
