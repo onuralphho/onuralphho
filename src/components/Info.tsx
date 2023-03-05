@@ -13,7 +13,7 @@ const Info = () => {
   const [selfInfo, setSelfInfo] = useState([
     { text: "Developer", color: "#9333ea" },
     { text: "Engineer", color: "#d97706" },
-    { text: "Designer", color: "#06b6d4" },
+    { text: "Designer", color: "#16a34a" },
   ]);
 
   return (
@@ -31,15 +31,15 @@ const Info = () => {
       </div>
 
       <div
-        className="flex w-full gap-3 lg:gap-60 max-md:flex-col  max-md:items-center md:justify-evenly md:px-40"
+        className="flex w-full gap-3 lg:gap-60 max-md:flex-col  max-md:items-center items-center md:justify-evenly md:px-40"
         style={{ zIndex: "2" }}
       >
         <div className="flex flex-col items-center gap-10">
           <LazyLoadImage
             src={profilePicture}
             alt="profile picture of author"
-            width={600}
-            height={600}
+            width={400}
+            height={400}
             className=" h-auto max-w-[150px] md:max-w-md rounded-full shadow-lg shadow-[rgba(0,0,0,0.5)]"
             placeholder={
               <div className="h-40 w-40 shadow-lg shadow-black "><img src="" alt="" /></div>

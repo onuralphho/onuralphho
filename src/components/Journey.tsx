@@ -86,7 +86,7 @@ const Journey = () => {
             </h2>
             <a href={project.link !== 'dev'?project.link:''}>
             <div
-              className={`card-inner ${
+              className={`card-inner  ${
                 cardRotate === project.id && "card-inner-rotate"
               }`}
             >
@@ -96,7 +96,7 @@ const Journey = () => {
                 }`}
               >
                 <LazyLoadImage
-                  className="rounded-2xl overflow-hidden"
+                  className="rounded-2xl overflow-hidden shadow-md shadow-[rgba(0,0,0,0.5)]"
                   width={300}
                   src={project.pictureLink}
                  
