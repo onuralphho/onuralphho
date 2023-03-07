@@ -9,7 +9,7 @@ function App() {
   const ref = useRef(null);
 
   return (
-    <div className="main-container overflow-x-hidden overflow-y-scroll h-screen mx-auto max-w-[1920px] flex flex-col gap-56">
+    <div className="main-container  overflow-x-hidden overflow-y-scroll h-screen mx-auto max-w-[1920px] flex flex-col  gap-36">
       <div className="main-item h-screen">
         <Info />
       </div>
@@ -19,7 +19,7 @@ function App() {
       <div className="main-item h-screen">
         <Contact/>
       </div>
-      <div>
+      <div className="">
         
       </div>
     </div>

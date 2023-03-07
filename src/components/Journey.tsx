@@ -7,8 +7,7 @@ import soChat from "../assets/soprahlog.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "swiper/css";
-import { useState } from "react";
-import profilesmall from '../assets/profile-small.jpg'
+import { useState, useEffect } from "react";
 
 const PROJECTS_DATA = [
   {
@@ -47,7 +46,7 @@ const PROJECTS_DATA = [
 
 const Journey = () => {
   const [cardRotate, setCardRotate] = useState(0);
-
+ 
   return (
     <div
       id="section2"
@@ -84,36 +83,35 @@ const Journey = () => {
             <h2 className="card-name-tag z-20  group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[rgba(0,0,0,0.2)] transition-all  absolute backdrop-blur  lg:-top-8 lg:-left-10 text-[#252525] lg:text-2xl border-4 border-l-indigo-500 border-b-indigo-700 border-t-orange-400 border-r-orange-600 shadow-md shadow-[rgba(0,0,0,0.5)] font-bold  p-2 rounded-xl">
               {project.name}
             </h2>
-            <a href={project.link !== 'dev'?project.link:''}>
-            <div
-              className={`card-inner  ${
-                cardRotate === project.id && "card-inner-rotate"
-              }`}
-            >
+            <a href={project.link !== "dev" ? project.link : ""}>
               <div
-                className={`card-front transition-all opacity-100 ${
-                  cardRotate === project.id && "opacity-0"
+                className={`card-inner  ${
+                  cardRotate === project.id && "card-inner-rotate"
                 }`}
               >
-                <LazyLoadImage
-                  className="rounded-2xl overflow-hidden shadow-md shadow-[rgba(0,0,0,0.5)]"
-                  width={300}
-                  src={project.pictureLink}
-                 
-                />
-              </div>
+                <div
+                  className={`card-front transition-all opacity-100 ${
+                    cardRotate === project.id && "opacity-0"
+                  }`}
+                >
+                  <LazyLoadImage
+                    className="rounded-2xl overflow-hidden shadow-md shadow-[rgba(0,0,0,0.5)]"
+                    width={300}
+                    src={project.pictureLink}
+                  />
+                </div>
 
-              <div
-                className={`card-back w-full h-full transition-all bg-white absolute top-0 rounded-2xl pt-14 lg:pt-10 px-5 text-start opacity-0 ${
-                  cardRotate === project.id && "opacity-100"
-                }`}
-              >
-                <h2 className="font-bold text-xl max-lg:hidden">
-                  {project.name}
-                </h2>
-                <p className="pl-3 pt-2 font-medium">{project.description}</p>
+                <div
+                  className={`card-back w-full h-full transition-all bg-white absolute top-0 rounded-2xl pt-14 lg:pt-10 px-5 text-start opacity-0 ${
+                    cardRotate === project.id && "opacity-100"
+                  }`}
+                >
+                  <h2 className="font-bold text-xl max-lg:hidden">
+                    {project.name}
+                  </h2>
+                  <p className="pl-3 pt-2 font-medium">{project.description}</p>
+                </div>
               </div>
-            </div>
             </a>
             <button
               onClick={() => {
@@ -123,7 +121,6 @@ const Journey = () => {
                   setCardRotate(project.id);
                 }
               }}
-             
               className="absolute bottom-2 max-md:bg-gradient-to-bl from-green-500 right-2  lg:-bottom-3 px-2  lg:-right-4 text-[#252525] rounded-lg backdrop-blur-xl border-2 border-l-indigo-500 border-b-indigo-700 border-t-orange-400 border-r-orange-600 shadow-md shadow-[rgba(0,0,0,0.5)]"
             >
               <FiArrowRight color="" className=" w-7 h-7" />
