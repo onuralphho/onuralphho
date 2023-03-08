@@ -69,7 +69,7 @@ const Contact = () => {
           </h2>
           <p className="text-white font-bold md:text-xl my-2 md:m-3 text-center">
             If you're looking for a reliable and skilled web developer to help
-            bring your ideas to life, contact me here!.
+            bring your ideas to life, contact me here!
           </p>
           <div className="relative  group  text-green-400">
             <input
