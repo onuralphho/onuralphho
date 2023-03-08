@@ -39,9 +39,9 @@ const Info = () => {
       id="section1"
       className="flex flex-col relative  gap-10 md:justify-center   h-[100svh] max-h-[1080px]  w-full pt-20 p-10 bg-gradient-to-tr   from-[#161616] to- shadow-[rgba(0,0,0,1)] shadow-2xl"
     >
-      <motion.div ref={ref} variants={skillsVariants} initial='hidden' animate={controls} className="flex gap-2 justify-start md:pl-60 flex-wrap">
-        <span className="text-7xl font-bold text-white ">Hi, I'm </span>
-        <span className="flex flex-col gap-7 md:gap-10 font-bold h-20 md:h-28 overflow-hidden">
+      <motion.div ref={ref} variants={skillsVariants} initial='hidden' animate={controls} className="flex gap-2 justify-start items-center md:pl-60 flex-wrap">
+        <span className="text-6xl md:text-7xl font-bold text-white ">Hi, I'm </span>
+        <span className="flex flex-col gap-7 md:gap-10 font-bold h-20   md:h-28 overflow-hidden">
           {selfInfo.map((i, index) => (
             <span
               key={index}

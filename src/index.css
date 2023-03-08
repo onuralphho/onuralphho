@@ -349,38 +349,38 @@ body{
   padding: 20px;
   padding-left: 0px;
   white-space: nowrap;
- transform: translateY(-25%);
+ transform: translateY(-15%);
  animation: text-slide 5s infinite alternate linear ;
 }
 
 @keyframes text-slide {
 
   20%{
-    transform: translateY(-25%);
+    transform: translateY(-15%);
   }
   48%{
-    transform: translateY(-150%);
+    transform: translateY(-144%);
   }
   50%{
-    transform: translateY(-152%);
+    transform: translateY(-146%);
   }
   52%{
-    transform: translateY(-150%);
+    transform: translateY(-144%);
   }
   70%{
-    transform: translateY(-150%);
+    transform: translateY(-144%);
   }
   90%{
-    transform: translateY(-280%);
+    transform: translateY(-274%);
   }
   92%{
-    transform: translateY(-282%);
+    transform: translateY(-276%);
   }
   94%{
-    transform: translateY(-280%);
+    transform: translateY(-274%);
   }
   100%{
-    transform: translateY(-280%);
+    transform: translateY(-274%);
   }
   
 }
