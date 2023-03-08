@@ -5,6 +5,6 @@ export interface IAlert{
 }
 
 export type AlertContextType = {
-    alert:object,
+    alert:any,
     setAlert:any
 }

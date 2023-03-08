@@ -1,7 +1,8 @@
-export function sleep(time) {
+export function sleep(time:any) {
     return new Promise((resolve, reject) => {
+      let a: unknown;
       setTimeout(() => {
-        resolve();
+        resolve(a);
       }, time);
     });
   }
