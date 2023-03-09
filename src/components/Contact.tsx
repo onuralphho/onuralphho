@@ -29,26 +29,41 @@ const Contact = () => {
 
   const [emailInput, setEmailInput] = useState("");
   const [messageInput, setMessageInput] = useState("");
+  const [errorEmail, setErrorEmail] = useState(false)
+
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    emailjs.sendForm(
-      "service_8ke6iu1",
-      "template_p4ynw24",
-      e.target,
-      "3XOVJs_SN-nTKAV6U"
-    );
-    setEmailInput("");
-    setMessageInput("");
 
-    alertCtx?.setAlert({ shown: true, type: "Message Delivered" });
-    await sleep(2000);
-    alertCtx?.setAlert({ shown: false, type: "Message Delivered"});
+    if (emailInput.length > 0) {
+      setErrorEmail(false)
+      emailjs.sendForm(
+        "service_8ke6iu1",
+        "template_p4ynw24",
+        e.target,
+        "3XOVJs_SN-nTKAV6U"
+      );
+      setEmailInput("");
+      setMessageInput("");
+
+      alertCtx?.setAlert({ shown: true, type: "Message Delivered" });
+      await sleep(2000);
+      alertCtx?.setAlert({ shown: false, type: "Message Delivered" });
+    }
+    else{
+      setErrorEmail(true)
+      alertCtx?.setAlert({ shown: true, type: "Message could not be sent" });
+      await sleep(2000);
+      alertCtx?.setAlert({ shown: false, type: "Message could not be sent" });
+    }
   };
 
   return (
     <>
-      <AlertBox message={alertCtx?.alert.type} isShown={alertCtx?.alert.shown} />
+      <AlertBox
+        message={alertCtx?.alert.type}
+        isShown={alertCtx?.alert.shown}
+      />
       <div
         id="section3"
         className="flex relative justify-center md:items-center h-[100svh] max-h-[1080px] w-full  pt-20 p-2  bg-gradient-to-tr from-red-600 shadow-[rgba(0,0,0,1)] shadow-2xl"
@@ -76,6 +91,7 @@ const Contact = () => {
               type="email"
               value={emailInput}
               onChange={(e) => {
+                setErrorEmail(false)
                 setEmailInput(e.target.value);
               }}
               name="email_from"
@@ -85,7 +101,7 @@ const Contact = () => {
             <label className="absolute transition-all duration-300 bg-stone-800 pointer-events-none text-lg  px-1 h-min left-5 peer-placeholder-shown:text-2xl -top-20  peer-focus:-top-20 peer-focus:text-lg peer-placeholder-shown:-top-6 font-bold my-auto  bottom-0 ">
               E-mail
             </label>
-            <p className="invisible peer-invalid:visible text-red-600 ">
+            <p className={`${!errorEmail?'invisible':'visible'}  peer-invalid:visible  text-red-600 `}>
               Please enter valid email
             </p>
           </div>
@@ -104,7 +120,7 @@ const Contact = () => {
             <label className="absolute transition-all duration-300 bg-stone-800 pointer-events-none text-lg  px-1 h-min left-5 peer-placeholder-shown:text-2xl -top-20  peer-focus:-top-20 peer-focus:text-lg peer-placeholder-shown:-top-6 font-bold my-auto  bottom-0 ">
               Message
             </label>
-            <p className="invisible peer-invalid:visible text-red-600 ">
+            <p className={`invisible peer-invalid:visible ${!errorEmail&&'visible'} text-red-600 `}>
               Please enter a message
             </p>
           </div>
