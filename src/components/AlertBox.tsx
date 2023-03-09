@@ -1,5 +1,6 @@
 import { useAlertContext } from "../contexts/AlertProvider";
 import { TiTick } from "react-icons/ti";
+import { GiCancel } from "react-icons/gi";
 const AlertBox = (props: any) => {
 
 
@@ -11,7 +12,7 @@ const AlertBox = (props: any) => {
     >
       <div className="flex gap-1 items-center text-2xl text-white font-thin">
         {props.message}
-        {props.message !=='Message could not be sent' &&<TiTick />}
+        {props.message !=='Message could not be sent' ?<TiTick />:<GiCancel/>}
       </div>
     </div>
   );
