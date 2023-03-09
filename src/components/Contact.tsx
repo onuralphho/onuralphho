@@ -34,32 +34,40 @@ const Contact = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    setIsMessageSending(true);
-    const res = await fetch(
-      `https://emailvalidation.abstractapi.com/v1/?api_key=9081505faa59489cafd0da471c6e98fb&email=${emailInput}`
-    );
-    const data = await res.json();
-
-    if (emailInput.length > 0 && data.is_smtp_valid.value) {
-      setErrorEmail(false);
-      emailjs.sendForm(
-        "service_8ke6iu1",
-        "template_p4ynw24",
-        e.target,
-        "3XOVJs_SN-nTKAV6U"
+    if (emailInput.length > 0) {
+      setIsMessageSending(true);
+      const res = await fetch(
+        `https://emailvalidation.abstractapi.com/v1/?api_key=9081505faa59489cafd0da471c6e98fb&email=${emailInput}`
       );
-      setIsMessageSending(false);
-      setEmailInput("");
-      setMessageInput("");
-      alertCtx?.setAlert({ shown: true, type: "Message Delivered" });
-      await sleep(2000);
-      alertCtx?.setAlert({ shown: false, type: "Message Delivered" });
+      const data = await res.json();
+
+      if (data.is_smtp_valid.value) {
+        setErrorEmail(false);
+        emailjs.sendForm(
+          "service_8ke6iu1",
+          "template_p4ynw24",
+          e.target,
+          "3XOVJs_SN-nTKAV6U"
+        );
+        setIsMessageSending(false);
+        setEmailInput("");
+        setMessageInput("");
+        alertCtx?.setAlert({ shown: true, type: "Message Delivered" });
+        await sleep(2000);
+        alertCtx?.setAlert({ shown: false, type: "Message Delivered" });
+      } else {
+        setIsMessageSending(false);
+        setErrorEmail(true);
+        alertCtx?.setAlert({ shown: true, type: "Please Enter Valid E-mail" });
+        await sleep(2000);
+        alertCtx?.setAlert({ shown: false, type: "Please Enter Valid E-mail" });
+      }
     } else {
       setIsMessageSending(false);
       setErrorEmail(true);
-      alertCtx?.setAlert({ shown: true, type: "Message could not be sent" });
+      alertCtx?.setAlert({ shown: true, type: "Please Fill the Form" });
       await sleep(2000);
-      alertCtx?.setAlert({ shown: false, type: "Message could not be sent" });
+      alertCtx?.setAlert({ shown: false, type: "Please Fill the Form" });
     }
   };
 
