@@ -29,29 +29,34 @@ const Contact = () => {
 
   const [emailInput, setEmailInput] = useState("");
   const [messageInput, setMessageInput] = useState("");
-  const [errorEmail, setErrorEmail] = useState(false)
-
+  const [errorEmail, setErrorEmail] = useState(false);
+  const [isMessageSending, setIsMessageSending] = useState(false);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    setIsMessageSending(true);
+    const res = await fetch(
+      `https://emailvalidation.abstractapi.com/v1/?api_key=9081505faa59489cafd0da471c6e98fb&email=${emailInput}`
+    );
+    const data = await res.json();
 
-    if (emailInput.length > 0) {
-      setErrorEmail(false)
+    if (emailInput.length > 0 && data.is_smtp_valid.value) {
+      setErrorEmail(false);
       emailjs.sendForm(
         "service_8ke6iu1",
         "template_p4ynw24",
         e.target,
         "3XOVJs_SN-nTKAV6U"
       );
+      setIsMessageSending(false);
       setEmailInput("");
       setMessageInput("");
-
       alertCtx?.setAlert({ shown: true, type: "Message Delivered" });
       await sleep(2000);
       alertCtx?.setAlert({ shown: false, type: "Message Delivered" });
-    }
-    else{
-      setErrorEmail(true)
+    } else {
+      setIsMessageSending(false);
+      setErrorEmail(true);
       alertCtx?.setAlert({ shown: true, type: "Message could not be sent" });
       await sleep(2000);
       alertCtx?.setAlert({ shown: false, type: "Message could not be sent" });
@@ -63,6 +68,7 @@ const Contact = () => {
       <AlertBox
         message={alertCtx?.alert.type}
         isShown={alertCtx?.alert.shown}
+        closeBox={alertCtx?.setAlert}
       />
       <div
         id="section3"
@@ -91,7 +97,7 @@ const Contact = () => {
               type="email"
               value={emailInput}
               onChange={(e) => {
-                setErrorEmail(false)
+                setErrorEmail(false);
                 setEmailInput(e.target.value);
               }}
               name="email_from"
@@ -101,7 +107,11 @@ const Contact = () => {
             <label className="absolute transition-all duration-300 bg-stone-800 pointer-events-none text-lg  px-1 h-min left-5 peer-placeholder-shown:text-2xl -top-20  peer-focus:-top-20 peer-focus:text-lg peer-placeholder-shown:-top-6 font-bold my-auto  bottom-0 ">
               E-mail
             </label>
-            <p className={`${!errorEmail?'invisible':'visible'}  peer-invalid:visible  text-red-600 `}>
+            <p
+              className={`${
+                !errorEmail ? "invisible" : "visible"
+              }  peer-invalid:visible  text-red-600 `}
+            >
               Please enter valid email
             </p>
           </div>
@@ -120,12 +130,21 @@ const Contact = () => {
             <label className="absolute transition-all duration-300 bg-stone-800 pointer-events-none text-lg  px-1 h-min left-5 peer-placeholder-shown:text-2xl -top-20  peer-focus:-top-20 peer-focus:text-lg peer-placeholder-shown:-top-6 font-bold my-auto  bottom-0 ">
               Message
             </label>
-            <p className={`invisible peer-invalid:visible ${!errorEmail&&'visible'} text-red-600 `}>
+            <p
+              className={`invisible peer-invalid:visible ${
+                !errorEmail && "visible"
+              } text-red-600 `}
+            >
               Please enter a message
             </p>
           </div>
-          <button className="w-fit transition-all hover:bg-green-300 bg-green-400 text-3xl px-5 py-1 rounded-xl text-[#252525] font-bold flex gap-1">
-            <span>Send</span> <IoPaperPlane size={25} className="self-center" />
+          <button className="w-fit transition-all hover:bg-green-300 bg-green-400 text-3xl px-5 py-1 rounded-xl text-[#252525] font-bold flex gap-3">
+            <span>Send</span>{" "}
+            {isMessageSending ? (
+              <span className="w-6 h-6 border-t-purple-600 border-t-[3px] border-r-[3px] border-r-transparent rounded-full   self-center animate-spin"></span>
+            ) : (
+              <IoPaperPlane size={24} className="self-center" />
+            )}
           </button>
         </motion.form>
 
