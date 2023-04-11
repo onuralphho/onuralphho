@@ -9,7 +9,7 @@ const Header = () => {
     >
       <ul className="flex gap-4 ">
         <li>
-          <a href="https://github.com/Porpos/">
+          <a href="https://github.com/onuralphho/">
             <BsGithub color="white" className="social-icon" />
           </a>
         </li>
