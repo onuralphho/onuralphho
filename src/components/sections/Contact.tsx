@@ -1,12 +1,12 @@
-import PageShift from "./PageShift";
+import PageShift from "../PageShift";
 import { IoPaperPlane } from "react-icons/io5";
 import emailjs from "@emailjs/browser";
 import { useState, useEffect } from "react";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useAlertContext } from "../contexts/AlertProvider";
-import AlertBox from "./AlertBox";
-import { sleep } from "../tools/sleep.js";
+import { useAlertContext } from "../../contexts/AlertProvider";
+import AlertBox from "../AlertBox";
+import { sleep } from "../../tools/sleep.js";
 
 const Contact = () => {
   const alertCtx = useAlertContext();

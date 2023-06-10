@@ -1,9 +1,9 @@
 import "./App.css";
 import createScrollSnap from "scroll-snap";
 import { useRef } from "react";
-import Info from "./components/Info";
-import Journey from "./components/Journey";
-import Contact from "./components/Contact";
+import Info from "./components/sections/Info";
+import Journey from "./components/sections/Journey";
+import Contact from "./components/sections/Contact";
 
 function App() {
   const ref = useRef(null);
