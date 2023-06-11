@@ -56,7 +56,7 @@ const Info = () => {
 			</motion.div>
 
 			<div
-				className="flex w-full gap-3 lg:gap-60 max-md:flex-col  max-md:items-center items-center md:justify-center md:px-40"
+				className="flex relative w-full gap-3 lg:gap-40 max-md:flex-col  max-md:items-center items-center md:justify-around md:px-40"
 				style={{ zIndex: "2" }}>
 				<motion.div
 					ref={ref}
@@ -72,7 +72,9 @@ const Info = () => {
 						className="max-md:hidden  rounded-full max-md:max-w-[150px] shadow-lg shadow-[rgba(0,0,0,0.5)]"
 					/>
 				</motion.div>
-
+				<div className="absolute inset-0 m-auto w-40 h-0.5 bg-white">
+					<div className="absolute w-3 aspect-square bg-white rounded-full -left-1 -top-[3px]"></div>
+				</div>
 				<CoreSkills />
 			</div>
 

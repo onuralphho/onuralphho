@@ -8,7 +8,7 @@ import dotnetLogo from "../assets/NET_Core_Logo.svg.png";
 import Tilt from "react-parallax-tilt";
 const CoreSkills = () => {
 	return (
-		<Tilt tiltMaxAngleX={15} tiltMaxAngleY={15}>
+		<Tilt tiltMaxAngleX={10} tiltMaxAngleY={10}>
 			<div className="relative scale-90 flex gap-1  md:gap-5  flex-col p-2 md:p-6 aspect-video shadow bg-[#ffffff2d] backdrop-blur-sm border-l-[0.1px] border-t-[1px] rounded-lg">
 				<NameCode />
 
