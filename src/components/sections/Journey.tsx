@@ -198,7 +198,7 @@ const Journey = () => {
 										cardRotate === project.id && "opacity-100"
 									}`}>
 									<h2 className="font-bold text-xl max-lg:hidden">{project.name}</h2>
-									<p className="pl-3 pt-2 font-medium">{project.description}</p>
+									<p className="pl-3 pt-2 font-medium max-md:h-52 max-md:overflow-y-scroll">{project.description}</p>
 									Tech Stack:
 									<div className="flex flex-wrap gap-2 ">
 										
