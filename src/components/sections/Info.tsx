@@ -72,8 +72,15 @@ const Info = () => {
 						className="max-md:hidden  rounded-full max-md:max-w-[150px] shadow-lg shadow-[rgba(0,0,0,0.5)]"
 					/>
 				</motion.div>
-				<div className="absolute inset-0 m-auto w-40 h-0.5 bg-white">
-					<div className="absolute w-3 aspect-square bg-white rounded-full -left-1 -top-[3px]"></div>
+				<div className="max-md:hidden absolute inset-0 my-auto w-[1000px] -z-10 h-0.5 bg-white">
+					<div className="hover:w-4 group transition-all absolute w-3 aspect-square bg-white rounded-full -left-1 -top-[4px]">
+						<div className="group-hover:opacity-100 text-white text-xl font-semibold absolute left-0 top-2">{2019}</div>
+
+					</div>
+					<div className="hover:w-4 group transition-all absolute w-3 aspect-square bg-white rounded-full left-[700px] -top-[4px]">
+						<div className="group-hover:opacity-100 text-white text-xl font-semibold absolute  top-2">{new Date().getFullYear()	}</div>
+
+					</div>
 				</div>
 				<CoreSkills />
 			</div>
