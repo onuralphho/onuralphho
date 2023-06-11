@@ -9,7 +9,7 @@ import Tilt from "react-parallax-tilt";
 const CoreSkills = () => {
 	return (
 		<Tilt tiltMaxAngleX={15} tiltMaxAngleY={15}>
-			<div className="relative flex gap-1  md:gap-5  flex-col p-2 md:p-8 aspect-video shadow bg-[#ffffff2d] backdrop-blur-sm border-l-[0.1px] border-t-[1px] rounded-lg">
+			<div className="relative scale-90 flex gap-1  md:gap-5  flex-col p-2 md:p-6 aspect-video shadow bg-[#ffffff2d] backdrop-blur-sm border-l-[0.1px] border-t-[1px] rounded-lg">
 				<NameCode />
 
 				<div className="relative grid grid-cols-2 h-max gap-2  shadow-md hover:z-50 border border-transparent hover:border-white hover:scale-110 transition-all p-2 pt-8 md:p-4 md:pt-8   bg-[#252525] rounded-lg">
@@ -30,7 +30,7 @@ const CoreSkills = () => {
 						<img src={nextLogo} className="w-10 " alt="" />
 						<span className="font-semibold">Next.js</span>
 					</div>
-					<div className="bg-white flex gap-4 rounded-md justify-around items-center h-[60px] p-2 ">
+					<div className="bg-white flex  gap-2 rounded-md justify-around items-center h-[60px] p-2 ">
 						<img src={jsLogo} className="w-10 " alt="" />
 						<span className="font-semibold">Javascript</span>
 					</div>
