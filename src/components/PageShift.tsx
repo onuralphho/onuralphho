@@ -17,7 +17,7 @@ const PageShift = (props:any) => {
       onClick={() => {
         useScroll(props.children);
       }}
-      className={`absolute z-20 max-w-fit m-auto left-0 right-0 group  border p-1  md:p-2 rounded-full flex items-center justify-center md:opacity-40 hover:opacity-80 transition-all  ${props.way === 'up'?'max-md:bottom-10 md:top-0 mt-2':'bottom-0 mb-2'}`}
+      className={`absolute bg-[#ffffff3d] backdrop-blur-sm z-20 max-w-fit m-auto left-0 right-0 group  border p-1  md:p-2 rounded-full flex items-center justify-center md:opacity-40 hover:opacity-80 transition-all  ${props.way === 'up'?'max-md:bottom-10 md:top-0 mt-2':'bottom-0 mb-2'}`}
     >
       {props.way ==='up' ?<SlArrowUp color="white" className="  w-20 h-5 md:w-20 md:h-10 max-md:opacity-0 " />:
       <SlArrowDown color="white" className=" w-20 h-5 md:w-20 md:h-10 max-md:opacity-0 " />}
