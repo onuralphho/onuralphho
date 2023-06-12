@@ -1,6 +1,5 @@
 import PageShift from "../PageShift";
 import profilePicture from "../../assets/profile.jpg";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useState, useEffect } from "react";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -64,7 +63,7 @@ const Info = () => {
 					initial="hidden"
 					animate={controls}
 					className="flex  flex-col items-center gap-10 ">
-					<LazyLoadImage
+					<img
 						src={profilePicture}
 						alt="profile picture of author"
 						width={400}
