@@ -40,7 +40,7 @@ const Info = () => {
 				variants={skillsVariants}
 				initial="hidden"
 				animate={controls}
-				className="flex gap-2  justify-start items-center md:pl-40 flex-wrap">
+				className="flex gap-2  justify-start items-center md:pl-60 flex-wrap">
 				<span className="text-4xl md:text-7xl font-bold text-white ">Hi, I'm </span>
 				<span className="flex flex-col gap-7 md:gap-10 font-bold h-20   md:h-28 overflow-hidden">
 					{selfInfo.map((i, index) => (
@@ -56,7 +56,7 @@ const Info = () => {
 			</motion.div>
 
 			<div
-				className="flex relative w-full gap-3 lg:gap-60 max-md:flex-col  max-md:items-center items-center md:justify-center"
+				className="flex relative w-full gap-3  max-md:flex-col  max-md:items-center items-center md:justify-around"
 				style={{ zIndex: "2" }}>
 				<motion.div
 					ref={ref}
@@ -72,12 +72,14 @@ const Info = () => {
 						className="max-md:hidden  rounded-full max-md:max-w-[150px] shadow-lg shadow-[rgba(0,0,0,0.5)]"
 					/>
 				</motion.div>
-				<div className="max-md:hidden absolute inset-0 left-20 my-auto w-[1000px] -z-10 h-0.5 bg-white">
+
+				{/* Timeline */}
+				<div className="max-md:hidden absolute inset-0 left-20 my-auto w-[1400px] -z-10 h-0.5 bg-white">
 					<div className="hover:w-4 group transition-all absolute w-3 aspect-square bg-white rounded-full -left-1 -top-[4px]">
 						<div className="group-hover:opacity-100 text-white text-xl font-semibold absolute left-0 top-2">{2019}</div>
 
 					</div>
-					<div className="hover:w-4 group transition-all absolute w-3 aspect-square bg-white rounded-full left-[600px] -top-[4px]">
+					<div className="hover:w-4 group transition-all absolute w-3 aspect-square bg-white rounded-full left-[800px] -top-[4px]">
 						<div className="group-hover:opacity-100 text-white text-xl font-semibold absolute  top-2">{new Date().getFullYear()	}</div>
 
 					</div>
